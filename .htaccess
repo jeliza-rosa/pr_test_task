@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Редирект с "www.site" на "site"
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -s
+RewriteRule ^.*$ - [L]
+RewriteRule (.*)/$  index.php?%{QUERY_STRING}
+
+ErrorDocument 403 /index.php?%{QUERY_STRING}
+ErrorDocument 404 /index.php?%{QUERY_STRING}
+
+RewriteCond %{REQUEST_URI} ^/Sitemap\.xml$ [NC]
+RewriteRule ^.* /index.php?%{QUERY_STRING} [L]
+
+<FilesMatch ".(inc.php)">
+  Order Allow,Deny
+</FilesMatch>

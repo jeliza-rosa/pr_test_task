@@ -1,0 +1,89 @@
+#image-config input{
+	width: 100%;
+}
+ul.images{
+	margin-left: 0;
+	font-size:0;
+}
+	ul.images li.item{
+		overflow: visible;
+		display: inline-block;
+		vertical-align: top;
+		width: 200px;
+		height: 200px;
+		font-size: 13px;
+		margin-right: 24px;
+		-webkit-transition: opacity .2s;
+		   -moz-transition: opacity .2s;
+			-ms-transition: opacity .2s;
+			 -o-transition: opacity .2s;
+				transition: opacity .2s;
+	}
+	ul.images li.item.ui-draggable-dragging{
+		z-index:10;
+	}
+	ul.images li.item .wrap{
+		position: relative;
+		overflow: hidden;
+		left: 0;
+		width: 200px;
+		height: 200px;
+
+	}
+	ul.images li.item.dragBefore{
+		opacity: 0.5;
+	}
+	ul.images li.item.dragBefore .wrap{
+		left: 15px;
+	}
+	ul.images li.item.dragAfter .wrap{
+		left: -15px;
+	}
+		ul.images li.item .image{
+			position: relative;
+		}
+		ul.images li.item .zoom-icon,
+		ul.images li.item .image{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		ul.images li.item div{
+			-webkit-transition: all .2s;
+			   -moz-transition: all .2s;
+				-ms-transition: all .2s;
+				 -o-transition: all .2s;
+					transition: all .2s;
+		}
+			ul.images li.item a.image{
+				line-height: 200px;
+				text-align: center;
+			}
+			ul.images li.item img{
+				vertical-align: middle;
+			}
+			ul.images li.item .desc{
+				display: block;
+				position: absolute;
+				top: 0;
+				left:0;
+				right:0;
+				bottom:0;
+				color: white;
+				text-shadow: 0 0 3px #000000;
+				overflow: hidden;
+				padding: 10px;
+				opacity: 0;
+				line-height: 18px;
+				text-align: left;
+				background: rgba(34,34,34,0.5);
+			}
+			ul.images li.item:hover .desc{
+				opacity: 1;
+			}
+				ul.images li.item .desc hr{
+					margin: 0;
+					width: 180px;
+					border: none;
+					border-bottom: 1px solid rgba(255,255,255,0.5);
+				}
